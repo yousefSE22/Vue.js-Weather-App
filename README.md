@@ -1,4 +1,4 @@
-In order to learn an practice Vue.js, I learnt how to create a weather app website using Vue.js and Wwww.weatherapi.com.
+In order to learn an practice Vue.js, I learnt how to create a weather app website using Vue.js and www.weatherapi.com.
 
 This project taught me many things, amongst them are the following: 
 
