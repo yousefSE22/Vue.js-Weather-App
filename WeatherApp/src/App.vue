@@ -9,9 +9,11 @@ const addPlace = (data) => {
   places.value.push(data)
 }
 
-const deletePlace = (name) =>
-  places.value = places.value.filter(p => p.location.name !== name)
-
+const deletePlace = (name) => {
+  if (confirm('Are you sure you want to delete this card?')) {
+    places.value = places.value.filter((p) => p.location.name !== name)
+  }
+}
 </script>
 
 <template>
@@ -30,14 +32,14 @@ const deletePlace = (name) =>
 
     <!-- search field -->
     <div>
-      <SearchInput @place-data="addPlace"/>
+      <SearchInput @place-data="addPlace" />
     </div>
 
     <!-- Weather Card -->
-     <div class="grid grid-cols-2 gap-4">
+    <div class="grid grid-cols-2 gap-4">
       <div v-for="(place, idx) in places" :key="idx">
-      <WeatherCard :place="place" @delete-place = "deletePlace" />
-     </div>
-     </div>
+        <WeatherCard :place="place" @delete-place="deletePlace" />
+      </div>
+    </div>
   </main>
 </template>
